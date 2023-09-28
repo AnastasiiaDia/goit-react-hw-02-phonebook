@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Button, FormEl, Input } from './FormElements.styled';
+
 export class Form extends Component {
   state = { name: '', number: '' };
 
@@ -18,18 +20,18 @@ export class Form extends Component {
     return (
       <>
         <h1>Phonebook</h1>
-        <form onSubmit={this.onFormSubmit}>
-          <p>Name</p>
-          <input
+        <FormEl onSubmit={this.onFormSubmit}>
+          <span>Name</span>
+          <Input
             type="text"
             name="name"
             required
             value={this.state.name}
             onChange={this.onChangeInputValue}
-            placeholder="User name"
+            placeholder="Diana Ivanova"
           />
-          <p>Number</p>
-          <input
+          <span>Number</span>
+          <Input
             type="tel"
             name="number"
             required
@@ -37,8 +39,8 @@ export class Form extends Component {
             onChange={this.onChangeInputValue}
             placeholder="123-45-67"
           />
-          <button type="submit">Add contact</button>
-        </form>
+          <Button type="submit">Add contact</Button>
+        </FormEl>
       </>
     );
   }

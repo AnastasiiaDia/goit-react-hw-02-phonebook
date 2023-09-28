@@ -1,7 +1,9 @@
 import Contact from '../Contact/Contact.jsx';
+import { Ul } from './ContactList.styled.js';
+
 export const ContactList = ({ contacts, onDeleteContact }) => {
   return (
-    <ul>
+    <Ul>
       {contacts.map(({ id, name, number }) => (
         <Contact
           key={id}
@@ -11,6 +13,6 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
           id={id}
         />
       ))}
-    </ul>
+    </Ul>
   );
 };
